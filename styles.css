@@ -1,0 +1,104 @@
+/* styles.css */
+body {
+    background-color: #0d0f2b;
+    font-family: Arial, sans-serif;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.pricing-table {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.pricing-card {
+    background-color: #1c1f3a;
+    border-radius: 10px;
+    text-align: center;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+    transition: transform 0.3s, filter 0.3s;
+}
+
+.card-header {
+    background-color: #3454f5;
+    border-radius: 10px 10px 0 0;
+    padding: 10px 0;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.card-price {
+    font-size: 50px;
+    margin: 20px 0;
+}
+
+.card-price span {
+    display: block;
+    font-size: 18px;
+    margin-top: -10px;
+}
+
+.features {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.features li {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.check {
+    color: #28a745;
+}
+
+.cross {
+    color: #dc3545;
+}
+
+.btn {
+    background-color: #3454f5;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.btn:hover {
+    background-color: #273ef5;
+}
+
+/* Specific styles for positioning and effects */
+.pricing-card.basic {
+ /* Blur effect */
+    transform: translateX(-50px) scale(0.9); /* Push to the left and make smaller */
+    z-index: 3;
+}
+
+.pricing-card.standard {
+    z-index: 3; /* Bring the middle card to the front */
+    transform: scale(1.1); /* Make it slightly larger */
+}
+
+.pricing-card.premium {
+    
+    transform: translateX(50px) scale(0.9); /* Push to the right and make smaller */
+    z-index: 3;
+}
+
+.pricing-table:hover .pricing-card.basic,
+.pricing-table:hover .pricing-card.premium {
+    filter: blur(8px); /* More blur when hovering on the table */
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide Down Animation with Payment Breakup</title>
+    <style>
+        /* CSS for Slide Down Animation */
+        .menu {
+            overflow: hidden; /* Hide overflow to prevent content from showing outside */
+            max-height: 0; /* Start with zero height */
+            transition: max-height 0.5s ease-out; /* Smooth transition for max-height */
+        }
+
+        .paymentBreakup.active {
+            max-height: 500px; /* Adjust this value to accommodate the content height */
+        }
+
+        .menu-content {
+            padding: 20px;
+            background-color: #f1f1f1; /* Example background color */
+            border: 1px solid #ccc; /* Example border */
+        }
+
+        .paymentBreakup {
+            overflow: hidden; /* Hide overflow to prevent content from showing outside */
+            max-height: 0; /* Start with zero height */
+            transition: max-height 0.5s ease-out;
+        }
+
+        .paymentBreakup li {
+            padding: 10px;
+            border-bottom: 1px solid #ddd; /* Border between items */
+            font-size: 14px;
+        }
+
+        .paymentBreakup li span {
+            font-weight: bold; /* Make the numbers bold */
+            float: right; /* Align the numbers to the right */
+        }
+
+        .paymentBreakupactive {
+            max-height: none; /* Ensure it can expand fully if toggled */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HTML Structure -->
+    <button onclick="toggleSlide()">Toggle Payment Breakup</button>
+    <div>
+        <li><span>-15.36</span>Prepaid Discount 10.00%</li>
+                <li><span>15.90</span>Tax @ 11.50%</li>
+   
+<div>
+            <ul class="paymentBreakup">
+                <li><span>153.60</span>3 days @ 51.20/day</li>
+                <li><span>-15.36</span>Prepaid Discount 10.00%</li>
+                <li><span>15.90</span>Tax @ 11.50%</li>
+                <li><span>154.14</span>Total</li>
+            </ul>
+          </div>
+          <div>
+          <li><span>-15.36</span>Prepaid Discount 10.00%</li>
+          <li><span>15.90</span>Tax @ 11.50%</li>
+        </div>
+        </div>
+
+    <script>
+        // JavaScript to Trigger Slide Down/Up Animation
+        function toggleSlide() {
+            var paymentBreakup = document.querySelector('.paymentBreakup');
+            paymentBreakup.classList.toggle('active');
+        }
+    </script>
+
+</body>
+</html>
